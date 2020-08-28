@@ -1,7 +1,13 @@
 $( document ).ready( onReady );
 
 // globals
-let inventory = [];
+let inventory = [ 
+    {
+        size: 'small',
+        color: 'red',
+        description: 'drop of blood'
+    }
+];
 
 function addItem(){
     console.log( 'in addItem' );
