@@ -7,7 +7,7 @@ Inventory app w/ JS/JQ/HTML
 [x] push user input into inventory array
 [x] display inventory on DOM
 [x] interface and click capture for search
-[ ] logic for search
-[ ] display search results
+[x] logic for search
+[x] display search results
 
 swing! swing!

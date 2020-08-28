@@ -28,12 +28,33 @@ function displayInventory(){
     for( let i=0; i<inventory.length; i++ ){
         // append each item to the ul 
         el.append( `<li>${ inventory[i].size } & ${ inventory[i].color }: 
-        ${ inventory[i].description }</li>` );
+            ${ inventory[i].description }</li>` );
     } // end for
 } // end displayInventory
 
 function itemSearch(){
     console.log( 'in itemSearch' );
+    // our emtpy array to hold matches
+    let matches = [];
+    // loop through inventory array
+    for( let i=0; i<inventory.length; i++ ){
+        // check for matches on size & color (test size first)
+        if( inventory [ i ].size === $( '#sizeSearchIn' ).val() 
+            && inventory [ i ].color === $( '#colorSearchIn' ).val()){
+            // push matches into matches array
+            matches.push( inventory [ i ] );
+        } // end match
+    } // end for
+    // display matches
+    // target & empty my ul element
+    let el = $( '#searchResultsOut' );
+    el.empty();
+    // loop through matches array
+    for( let i=0; i<matches.length; i++ ){
+        // append each match to the ul
+        el.append( `<li>${ matches[i].size } & ${ matches[i].color }: 
+            ${ matches[i].description }</li>` )
+    } // end for
 } // end itemSearch
 
 function onReady(){
